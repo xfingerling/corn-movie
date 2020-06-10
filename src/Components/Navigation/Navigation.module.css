@@ -1,0 +1,54 @@
+.nav {
+  background-color: #333;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+}
+
+.list {
+  background-color: #333;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.listItem {
+  padding: 10px;
+}
+
+.link {
+  color: rgb(179, 179, 179);
+  text-decoration: none;
+}
+
+.selected {
+  color: green;
+}
+
+.active {
+  background-color: #333;
+}
+
+@media screen and (max-width: 759px) {
+  .list {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    flex-direction: column;
+    transition: all 0.3s linear;
+  }
+
+  .active {
+    composes: list;
+    left: 0;
+  }
+
+  .listItem {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
