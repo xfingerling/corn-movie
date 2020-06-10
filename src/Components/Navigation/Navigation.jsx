@@ -46,6 +46,14 @@ const Navigation = ({ isOpen, menuToggle }) => {
           >
             Сartoons
           </NavLink>
+          <NavLink
+            to="/collections"
+            exact
+            className={style.link}
+            activeClassName={style.selected}
+          >
+            Сollections
+          </NavLink>
         </li>
       </ul>
     </nav>
