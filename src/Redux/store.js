@@ -1,12 +1,19 @@
-import { createStore, combineReducers } from "redux";
-import { devToolsEnhancer } from "redux-devtools-extension";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-import { navigationReducer } from "./navigation/navigationReducer";
+import navigationReducer from "./navigation/navigationReducer";
+import moviesReducer from "./movies/moviesReducer";
+
+import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
   navigation: navigationReducer,
+  movies: moviesReducer,
 });
 
-const store = createStore(rootReducer, devToolsEnhancer());
+const middleware = [thunk];
+const enhancer = applyMiddleware(...middleware);
+
+const store = createStore(rootReducer, composeWithDevTools(enhancer));
 
 export default store;

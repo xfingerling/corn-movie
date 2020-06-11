@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import HamburgerButton from "./HamburgerButton";
+import Modal from "./Modal";
 import { menuToggle } from "../../../Redux/navigation/navigationAction";
 
 const mapStateToProps = (state) => ({
@@ -10,4 +10,4 @@ const mapDispatchToProps = (dispatch) => ({
   menuToggle: (isOpen) => dispatch(menuToggle(isOpen)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HamburgerButton);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
