@@ -1,17 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import style from "./Navigation.module.css";
 
 import HamburgerButton from "./HamburgerButton/HamburgerButtonContainer";
-import Modal from "./Modal/ModalContainer";
+// import Modal from "./Modal/ModalContainer";
 
-const Navigation = ({ isOpen, menuToggle }) => {
+const Navigation = ({ menuIsOpen }) => {
   return (
     <>
-      {isOpen && <Modal />}
+      {/* {menuIsOpen && <Modal />} */}
       <nav className={style.nav}>
-        <ul className={isOpen ? style.active : style.list}>
+        <ul className={menuIsOpen ? style.active : style.list}>
           <HamburgerButton />
           <li className={style.listItem}>
             <NavLink
@@ -49,19 +50,24 @@ const Navigation = ({ isOpen, menuToggle }) => {
             >
               Сartoons
             </NavLink>
+          </li>
+          <li className={style.listItem}>
             <NavLink
-              to="/collections"
-              exact
+              to="/profile"
               className={style.link}
               activeClassName={style.selected}
             >
-              Сollections
+              Profile
             </NavLink>
           </li>
         </ul>
       </nav>
     </>
   );
+};
+
+Navigation.propTypes = {
+  menuIsOpen: PropTypes.bool,
 };
 
 export default Navigation;

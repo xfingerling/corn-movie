@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import style from "./HamburgerButton.module.css";
 
 const HamburgerButton = ({ isMenuOpen, menuToggle }) => {
@@ -16,6 +17,11 @@ const HamburgerButton = ({ isMenuOpen, menuToggle }) => {
       <span className={style.span} />
     </button>
   );
+};
+
+HamburgerButton.propTypes = {
+  isMenuOpen: PropTypes.bool,
+  menuToggle: PropTypes.func,
 };
 
 export default HamburgerButton;
