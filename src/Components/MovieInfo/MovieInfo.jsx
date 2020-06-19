@@ -21,7 +21,9 @@ const MovieInfo = ({ movieInfo }) => {
           <span>{moment(release_date).year()}</span>,
           <ul>
             {!!production_countries &&
-              production_countries.map((el) => <li>{el.iso_3166_1}</li>)}
+              production_countries.map((el, index) => (
+                <li key={index}>{el.iso_3166_1}</li>
+              ))}
           </ul>
           <ul>
             {!!genres && genres.map(({ id, name }) => <li key={id}>{name}</li>)}
