@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import * as sessionOperations from "../../Redux/session/sessionOperations";
 
-class LoginForm extends Component {
+class SingupForm extends Component {
   state = { name: "", email: "", password: "" };
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.props.onLogin({ ...this.state });
+    this.props.onSignup({ ...this.state });
 
     this.setState({ name: "", email: "", password: "" });
   };
@@ -22,10 +22,19 @@ class LoginForm extends Component {
 
   han;
   render() {
-    const { email, password } = this.state;
+    const { name, email, password } = this.state;
 
     return (
       <form onSubmit={this.handleSubmit}>
+        <label>
+          Name
+          <input
+            type="text"
+            value={name}
+            onChange={this.handleChange}
+            name="name"
+          ></input>
+        </label>
         <label>
           Email
           <input
@@ -50,12 +59,12 @@ class LoginForm extends Component {
   }
 }
 
-LoginForm.propTypes = {
-  onLogin: PropTypes.func,
+SingupForm.propTypes = {
+  onSignup: PropTypes.func,
 };
 
 const mapDispatchToProps = {
-  onLogin: sessionOperations.login,
+  onSignup: sessionOperations.signup,
 };
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(null, mapDispatchToProps)(SingupForm);

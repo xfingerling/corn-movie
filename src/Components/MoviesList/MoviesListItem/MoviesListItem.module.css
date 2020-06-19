@@ -1,0 +1,29 @@
+.movieListItem {
+  max-width: 200px;
+  margin-bottom: 16px;
+  padding-top: 20px;
+}
+
+.movieListItem:first-of-type {
+  margin-left: 16px;
+}
+
+.movieListItem:hover .img {
+  transform: scale(1.05) translateY(-7px);
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  transition: all 100ms linear;
+}
+
+.title {
+  font-size: 24px;
+  padding-top: 10px;
+}

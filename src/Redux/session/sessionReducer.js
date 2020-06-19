@@ -4,7 +4,7 @@ import Type from "../actionType";
 const user = (state = null, { type, payload }) => {
   switch (type) {
     case Type.LOGIN_SUCCESS:
-      console.log(payload);
+    case Type.SIGNUP_SUCCESS:
       return payload.user;
 
     case Type.LOGOUT:
@@ -18,6 +18,7 @@ const user = (state = null, { type, payload }) => {
 const authenticated = (state = false, { type }) => {
   switch (type) {
     case Type.LOGIN_SUCCESS:
+    case Type.SIGNUP_SUCCESS:
       return true;
 
     case Type.LOGOUT:
@@ -31,6 +32,7 @@ const authenticated = (state = false, { type }) => {
 const token = (state = null, { type, payload }) => {
   switch (type) {
     case Type.LOGIN_SUCCESS:
+    case Type.SIGNUP_SUCCESS:
       return payload.token;
 
     default:
@@ -41,6 +43,7 @@ const token = (state = null, { type, payload }) => {
 const error = (state = null, { type, payload }) => {
   switch (type) {
     case Type.LOGIN_ERROR:
+    case Type.SIGNUP_ERROR:
       return payload.error;
 
     default:

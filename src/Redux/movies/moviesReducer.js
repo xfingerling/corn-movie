@@ -11,13 +11,26 @@ const trendingMoviesReducer = (state = [], { type, payload }) => {
   }
 };
 
+const movieDetailsReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case Type.FETCH_MOVIE_DETAILS_SUCCESS:
+      return { ...payload.movie };
+
+    default:
+      return state;
+  }
+};
+
 const loadingReducer = (state = false, { type }) => {
   switch (type) {
     case Type.FETCH_MOVIES_REQUEST:
+    case Type.FETCH_MOVIE_DETAILS_REQUEST:
       return true;
 
     case Type.FETCH_MOVIES_ERROR:
     case Type.FETCH_MOVIES_SUCCESS:
+    case Type.FETCH_MOVIE_DETAILS_ERROR:
+    case Type.FETCH_MOVIE_DETAILS_SUCCESS:
       return false;
 
     default:
@@ -28,9 +41,11 @@ const loadingReducer = (state = false, { type }) => {
 const errorReducer = (state = null, { type, payload }) => {
   switch (type) {
     case Type.FETCH_MOVIES_REQUEST:
+    case Type.FETCH_MOVIE_DETAILS_REQUEST:
       return null;
 
     case Type.FETCH_MOVIES_ERROR:
+    case Type.FETCH_MOVIE_DETAILS_ERROR:
       return payload.error;
 
     default:
@@ -40,6 +55,7 @@ const errorReducer = (state = null, { type, payload }) => {
 
 export default combineReducers({
   trendingMovies: trendingMoviesReducer,
+  movieDetails: movieDetailsReducer,
   loading: loadingReducer,
   error: errorReducer,
 });

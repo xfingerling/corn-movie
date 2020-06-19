@@ -3,7 +3,7 @@ import * as moviesOperations from "../../Redux/movies/moviesOperations";
 import App from "./App";
 
 const mapDispatchToProps = {
-  fetchMovies: moviesOperations.fetchMovies,
+  fetchTrendingMovies: moviesOperations.fetchTrendingMovies,
 };
 
 export default connect(null, mapDispatchToProps)(App);

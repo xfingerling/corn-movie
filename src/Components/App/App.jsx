@@ -8,6 +8,7 @@ import AppHeader from "../AppHeader/AppGeaderContainer";
 
 import Home from "../../Pages/Home/Home";
 import Movies from "../../Pages/Movies/Movies";
+import MovieDetails from "../../Pages/MovieDetails/MovieDetailsContainer";
 import Series from "../../Pages/Series/Series";
 import Сartoons from "../../Pages/Сartoons/Сartoons";
 import Profile from "../../Pages/Profile/Profile";
@@ -16,7 +17,7 @@ import SignUp from "../../Pages/SignUp/SignUp";
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchMovies();
+    this.props.fetchTrendingMovies();
   }
 
   render() {
@@ -28,7 +29,8 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/profile" exact component={Profile} />
-            <Route path="/movies" component={Movies} />
+            <Route path="/movies/:id" component={MovieDetails} />
+            <Route path="/movies" exact component={Movies} />
             <Route path="/series" exact component={Series} />
             <Route path="/сartoons" exact component={Сartoons} />
             <Route path="/login" exact component={Login} />

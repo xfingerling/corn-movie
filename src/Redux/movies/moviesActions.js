@@ -17,3 +17,21 @@ export const fetchMoviesError = (error) => ({
     error,
   },
 });
+
+export const fetchMovieDetailsRequest = () => ({
+  type: Type.FETCH_MOVIE_DETAILS_REQUEST,
+});
+
+export const fetchMovieDetailsSuccess = (movie) => ({
+  type: Type.FETCH_MOVIE_DETAILS_SUCCESS,
+  payload: {
+    movie,
+  },
+});
+
+export const fetchMovieDetailsError = (error) => ({
+  type: Type.FETCH_MOVIE_DETAILS_ERROR,
+  payload: {
+    error,
+  },
+});
