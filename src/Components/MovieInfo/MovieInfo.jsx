@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 
 import Container from "../Container/Container";
+import style from "./MovieInfo.module.css";
 
 const MovieInfo = ({ movieInfo }) => {
   const {
@@ -15,8 +16,8 @@ const MovieInfo = ({ movieInfo }) => {
   console.log(movieInfo);
   return (
     <Container>
-      <section>
-        <p>{title}</p>
+      <section className={style.wrap}>
+        <p className={style.title}>{title}</p>
         <div>
           <span>{moment(release_date).year()}</span>,
           <ul>

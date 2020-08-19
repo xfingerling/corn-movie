@@ -5,14 +5,17 @@ import PropTypes from "prop-types";
 import style from "./Navigation.module.css";
 
 import HamburgerButton from "./HamburgerButton/HamburgerButtonContainer";
-// import Modal from "./Modal/ModalContainer";
+import Modal from "./Modal/ModalContainer";
 
-const Navigation = ({ menuIsOpen }) => {
+const Navigation = ({ isMenuOpen, menuToggle }) => {
   return (
     <>
-      {/* {menuIsOpen && <Modal />} */}
+      {isMenuOpen && <Modal />}
       <nav className={style.nav}>
-        <ul className={menuIsOpen ? style.active : style.list}>
+        <ul
+          className={isMenuOpen ? style.active : style.list}
+          onClick={menuToggle.bind(null, isMenuOpen)}
+        >
           <HamburgerButton />
           <li className={style.listItem}>
             <NavLink
@@ -67,7 +70,7 @@ const Navigation = ({ menuIsOpen }) => {
 };
 
 Navigation.propTypes = {
-  menuIsOpen: PropTypes.bool,
+  isMenuOpen: PropTypes.bool,
 };
 
 export default Navigation;

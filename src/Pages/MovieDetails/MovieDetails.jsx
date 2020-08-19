@@ -12,7 +12,6 @@ class MovieDetails extends Component {
   render() {
     return (
       <div>
-        <h2>Movie Info PAge</h2>
         <MovieInfo />
       </div>
     );

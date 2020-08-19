@@ -1,8 +1,13 @@
 import { connect } from "react-redux";
 import Navigation from "./Navigation";
+import { menuToggle } from "../../Redux/navigation/navigationAction";
 
 const mapStateToProps = (state) => ({
-  menuIsOpen: state.navigation.menuIsOpen,
+  isMenuOpen: state.navigation.menuIsOpen,
 });
 
-export default connect(mapStateToProps)(Navigation);
+const mapDispatchToProps = (dispatch) => ({
+  menuToggle: (isOpen) => dispatch(menuToggle(isOpen)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

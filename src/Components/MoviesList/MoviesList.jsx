@@ -23,6 +23,7 @@ const MoviesList = ({ title, trendingMovies }) => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 5,
+          slidesToScroll: 4,
           arrows: false,
         },
       },
@@ -30,6 +31,7 @@ const MoviesList = ({ title, trendingMovies }) => {
         breakpoint: 768,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 3,
           arrows: false,
         },
       },
@@ -37,6 +39,7 @@ const MoviesList = ({ title, trendingMovies }) => {
         breakpoint: 425,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 2,
           arrows: false,
         },
       },
@@ -44,6 +47,7 @@ const MoviesList = ({ title, trendingMovies }) => {
         breakpoint: 320,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
           arrows: false,
         },
       },
@@ -54,9 +58,11 @@ const MoviesList = ({ title, trendingMovies }) => {
     <section>
       <Container>
         {!!title && <h2 className={style.title}>{title}</h2>}
-        <Slider {...settings} className={style.slider}>
-          {listItem}
-        </Slider>
+        <div className={style.sliderWrap}>
+          <Slider {...settings} className={style.slider}>
+            {listItem}
+          </Slider>
+        </div>
       </Container>
     </section>
   );
@@ -64,7 +70,7 @@ const MoviesList = ({ title, trendingMovies }) => {
 
 MoviesList.propTypes = {
   title: PropTypes.string,
-  movies: PropTypes.arrayOf(PropTypes.object),
+  trendingMovies: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default MoviesList;

@@ -1,22 +1,19 @@
 .container {
-  width: auto;
-  margin-left: 16px;
-  margin-right: 16px;
-  padding-bottom: 16px;
+  width: 300px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1279px) and (min-width: 600px) {
   .container {
+    width: 580px;
     margin-left: 20px;
     margin-right: 20px;
-    padding-bottom: 24px;
   }
 }
 
 @media screen and (min-width: 1279px) {
   .container {
     width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
 }

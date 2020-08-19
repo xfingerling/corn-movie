@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
+import debounce from "lodash.debounce";
 
 import style from "./MoviesListItem.module.css";
 
@@ -11,9 +12,9 @@ class MoviesListItem extends Component {
     overlayIsOpen: false,
   };
 
-  onMouseOver = () => {
+  onMouseOver = debounce(() => {
     this.setState({ overlayIsOpen: true });
-  };
+  }, 200);
 
   onMouseOut = () => {
     this.setState({ overlayIsOpen: false });
@@ -34,15 +35,14 @@ class MoviesListItem extends Component {
           to={{ pathname: `/movies/${id}`, state: { from: location } }}
           className={style.link}
         >
-          {overlayIsOpen && <Overlay />}
+          {/* {overlayIsOpen && <Overlay />} */}
           <img
             src={poster && `http://image.tmdb.org/t/p/w200/${poster}`}
             alt={name || title}
-            className={style.img}
+            className={style.poster}
           />
-          <p className={style.title}>
-            {title.length > 14 ? title.slice(0, 14) + "…" : title}
-          </p>
+
+          <p className={style.title}>{title}</p>
         </Link>
       </div>
     );
@@ -54,6 +54,7 @@ MoviesListItem.propTypes = {
     id: PropTypes.number,
     title: PropTypes.string,
     name: PropTypes.string,
+    poster_path: PropTypes.string,
   }),
 
   location: PropTypes.object,
