@@ -5,7 +5,7 @@ import debounce from "lodash.debounce";
 
 import style from "./MoviesListItem.module.css";
 
-import Overlay from "../Overlay/Overlay";
+// import Overlay from "../Overlay/Overlay";
 
 class MoviesListItem extends Component {
   state = {
@@ -21,7 +21,7 @@ class MoviesListItem extends Component {
   };
 
   render() {
-    const { overlayIsOpen } = this.state;
+    // const { overlayIsOpen } = this.state;
     const { movie, location } = this.props;
     const { title, name, id, poster_path: poster } = movie;
 
