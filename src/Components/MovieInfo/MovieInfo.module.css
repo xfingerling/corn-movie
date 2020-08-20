@@ -1,8 +1,52 @@
-.wrap {
+.section {
   color: #fff;
 }
 
 .title {
+  text-align: right;
+  margin-bottom: 10px;
+  padding-left: 5px;
   font-size: 28px;
   font-weight: 900;
+}
+
+.poster {
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+.container {
+  color: #968acf;
+}
+
+.parameters {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.countriesList,
+.generesList {
+  list-style: none;
+  display: flex;
+}
+
+.runtime {
+  padding-left: 20px;
+  position: relative;
+}
+
+.runtime::before {
+  content: "";
+  display: block;
+  background-image: url(../../images/clock-regular.svg);
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.overview {
+  color: #c8c0ed;
 }
