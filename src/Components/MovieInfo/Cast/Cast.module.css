@@ -1,0 +1,45 @@
+.title {
+  margin-bottom: 5px;
+  /* box-shadow: 0 2px 0 #6152a8, inset 0 0 0 #6152a8; */
+  font-size: 20px;
+  color: #fff;
+}
+
+.listItem {
+  padding: 0 10px;
+}
+
+.imgWrap {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto;
+  margin-bottom: 6px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+}
+
+.profileImg {
+  position: absolute;
+  top: -30px;
+  left: -13px;
+  transform: scale(0.87);
+  width: 110px;
+  margin: 0 auto;
+}
+
+.name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: #e5e1fc;
+}
+
+.character {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #968acf;
+  font-size: 10px;
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
-import debounce from "lodash.debounce";
 
 import style from "./MoviesListItem.module.css";
 
@@ -12,13 +11,13 @@ class MoviesListItem extends Component {
     overlayIsOpen: false,
   };
 
-  onMouseOver = debounce(() => {
-    this.setState({ overlayIsOpen: true });
-  }, 200);
+  // onMouseOver = debounce(() => {
+  //   this.setState({ overlayIsOpen: true });
+  // }, 200);
 
-  onMouseOut = () => {
-    this.setState({ overlayIsOpen: false });
-  };
+  // onMouseOut = () => {
+  //   this.setState({ overlayIsOpen: false });
+  // };
 
   render() {
     // const { overlayIsOpen } = this.state;

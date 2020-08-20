@@ -36,14 +36,6 @@ const MoviesList = ({ title, trendingMovies }) => {
         },
       },
       {
-        breakpoint: 425,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          arrows: false,
-        },
-      },
-      {
         breakpoint: 320,
         settings: {
           slidesToShow: 2,

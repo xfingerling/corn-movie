@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 
 import Container from "../Container/Container";
+import Cast from "../MovieInfo/Cast/CastContainer";
 import style from "./MovieInfo.module.css";
 
 const MovieInfo = ({ movieInfo }) => {
@@ -16,12 +17,11 @@ const MovieInfo = ({ movieInfo }) => {
     overview,
   } = movieInfo;
 
-  console.log(movieInfo);
-
   return (
     <Container>
       <section className={style.section}>
-        <p className={style.title}>{title}</p>
+        <button>Back</button>
+        <h1 className={style.title}>{title}</h1>
 
         <img
           src={poster && `http://image.tmdb.org/t/p/w500/${poster}`}
@@ -45,6 +45,8 @@ const MovieInfo = ({ movieInfo }) => {
             <span className={style.runtime}>{runtime} min</span>
           </div>
           <p className={style.overview}>{overview}</p>
+
+          <Cast />
         </div>
       </section>
     </Container>

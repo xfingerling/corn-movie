@@ -8,7 +8,9 @@ export function fetchTrendingMovies() {
 }
 
 export function fetchMovieDetails(id) {
-  return axios.get(`${BASE_URL}movie/${id}?api_key=${API_KEY}`);
+  return axios.get(
+    `${BASE_URL}movie/${id}?api_key=${API_KEY}&append_to_response=credits`,
+  );
 }
 
 // https://api.themoviedb.org/3/movie/581859?api_key=20cd267abb960a552b7abbc1653318ee
